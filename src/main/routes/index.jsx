@@ -6,6 +6,7 @@ import PrivateRoute from './PrivateRoute';
 
 const Home = lazy(() => import('modules/Home'));
 const Dashboard = lazy(() => import('modules/Dashboard'));
+const Login = lazy(() => import('modules/Login'));
 
 const Routes = ({ isLoggedIn }) => {
   const location = useLocation();
@@ -25,6 +26,17 @@ const Routes = ({ isLoggedIn }) => {
         }}
       />
       <PrivateRoute exact path="/dashboard" component={Dashboard} />
+      <Route
+        exact
+        path="/login"
+        render={() => {
+          if (isLoggedIn && from) {
+            return <Home />;
+          } else {
+            return <Login />;
+          }
+        }}
+      />
       <Route render={() => { return <Error404 />; }} />
     </Switch>
   );
