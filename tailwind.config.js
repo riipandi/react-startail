@@ -21,7 +21,7 @@ module.exports = {
     : false,
   theme: {
     fontFamily: {
-      sans: ["'Inter'", ...defaultTheme.fontFamily.sans],
+      sans: ["'Robert Sans'", ...defaultTheme.fontFamily.sans],
     },
     extend: {
       colors: {
