@@ -5,14 +5,16 @@ import AppLayout from '../../main/layout';
 class Login extends PureComponent {
   render() {
     return (
-      <AppLayout>
+      <AppLayout pageTitle="Login - Reactail">
         <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
           <div className="sm:mx-auto sm:w-full sm:max-w-md">
-            <img
-              className="mx-auto h-12 w-auto"
-              src="https://tailwindui.com/img/logos/workflow-mark-on-white.svg"
-              alt="Workflow"
-            />
+            <Link to={`/`}>
+              <img
+                className="mx-auto h-12 w-auto"
+                src="https://tailwindui.com/img/logos/workflow-mark-on-white.svg"
+                alt="Workflow"
+              />
+            </Link>
             <h2 className="mt-6 text-center text-3xl leading-9 font-extrabold text-gray-900">
               Sign in to your account
             </h2>
@@ -20,7 +22,7 @@ class Login extends PureComponent {
               Or{' '}
               <Link
                 to={`/register`}
-                className="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">
+                className="font-medium text-primary-600 hover:text-primary-500 focus:outline-none focus:underline transition ease-in-out duration-150">
                 start your 14-day free trial
               </Link>
             </p>
@@ -94,7 +96,7 @@ class Login extends PureComponent {
                         <input
                           id="remember_me"
                           type="checkbox"
-                          className="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
+                          className="form-checkbox h-4 w-4 text-primary-600 transition duration-150 ease-in-out"
                         />
                         <label htmlFor="remember_me" className="ml-2 block text-sm leading-5 text-gray-900">
                           Remember me
@@ -103,8 +105,8 @@ class Login extends PureComponent {
 
                       <div className="text-sm leading-5">
                         <Link
-                          to={`/register`}
-                          className="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">
+                          to={`/resetpass`}
+                          className="font-medium text-primary-600 hover:text-primary-500 focus:outline-none focus:underline transition ease-in-out duration-150">
                           Forgot your password?
                         </Link>
                       </div>
@@ -114,7 +116,7 @@ class Login extends PureComponent {
                       <span className="block w-full rounded-md shadow-sm">
                         <button
                           type="submit"
-                          className="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out"
+                          className="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-primary-600 hover:bg-primary-500 focus:outline-none focus:border-primary-700 focus:shadow-outline-indigo active:bg-primary-700 transition duration-150 ease-in-out"
                           disabled={isSubmitting}>
                           Sign in
                         </button>

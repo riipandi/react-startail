@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { PureComponent } from 'react';
+import { Helmet } from 'react-helmet';
 
-export default function AppLayout(props) {
-  return (
-    <div className='font-sans antialiased min-h-screen'>
-      {props.children}
-    </div>
-  )
+class AppLayout extends PureComponent {
+  render() {
+    return (
+      <div className="font-sans antialiased min-h-screen">
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>{this.props.pageTitle || 'Reactail'}</title>
+        </Helmet>
+        {this.props.children}
+      </div>
+    );
+  }
 }
+
+export default AppLayout;

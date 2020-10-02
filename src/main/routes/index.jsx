@@ -5,12 +5,12 @@ import { Error404 } from '../../modules/Errors';
 import PrivateRoute from './PrivateRoute';
 
 const Home = lazy(() => import('modules/Home'));
-const Dashboard = lazy(() => import('modules/Dashboard'));
+// const Dashboard = lazy(() => import('modules/Dashboard'));
 const Login = lazy(() => import('modules/Login'));
 
 const Routes = ({ isLoggedIn }) => {
   const location = useLocation();
-  const { from } = location.state || { from: { pathname: '/bookings' } };
+  const { from } = location.state || { from: { pathname: '/dashboard' } };
 
   return (
     <Switch>
@@ -25,13 +25,12 @@ const Routes = ({ isLoggedIn }) => {
           }
         }}
       />
-      <PrivateRoute exact path="/dashboard" component={Dashboard} />
+      <PrivateRoute exact path="/dashboard" component={lazy(() => import('modules/Dashboard'))} />
       <Route
-        exact
         path="/login"
         render={() => {
           if (isLoggedIn && from) {
-            return <Home />;
+            return <Redirect to={from} />;
           } else {
             return <Login />;
           }
