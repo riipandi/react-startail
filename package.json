@@ -1,0 +1,101 @@
+{
+  "name": "react-startail",
+  "version": "0.1.0",
+  "author": {
+    "name": "Aris Ripandi",
+    "email": "riipandi@gmail.com",
+    "url": "https://github.com/riipandi"
+  },
+  "description": "React app starter with Redux, React Router, Private Route, Lodash, Axios Interceptor, and TailwindCSS everything pre-configured",
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.0.4",
+    "@testing-library/user-event": "^12.1.6",
+    "axios": "^0.20.0",
+    "formik": "^2.1.7",
+    "lodash": "^4.17.20",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.3",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
+  },
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "craco eject",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "format": "prettier --write \"**/*.+(js|jsx|json|css|md)\"",
+    "isReady": "npm run format && npm run lint:fix",
+    "serve": "serve -s build",
+    "prod": "npm run build && serve -s build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "plugin:prettier/recommended"
+    ]
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,css,json,md}": [
+      "npm run isReady",
+      "pretty-quick --staged"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "prettier": {
+    "arrowParens": "avoid",
+    "bracketSpacing": true,
+    "filepath": "src/**/*.js",
+    "jsxBracketSameLine": true,
+    "printWidth": 120,
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "all",
+    "useTabs": false,
+    "react/jsx-max-props-per-line": [
+      1,
+      {
+        "when": "always"
+      }
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@craco/craco": "^5.7.0",
+    "@headlessui/react": "^0.1.3",
+    "@tailwindcss/ui": "^0.6.2",
+    "@tailwindcss/typography": "^0.2.0",
+    "cleave.js": "^1.6.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.0",
+    "postcss": "^8.1.1",
+    "prettier": "^2.1.2",
+    "pretty-quick": "^3.0.2",
+    "smooth-scroll-anchor": "^1.2.5",
+    "serve": "^11.3.2",
+    "tailwindcss": "^1.8.10"
+  }
+}

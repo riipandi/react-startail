@@ -1,0 +1,14 @@
+/* Tailwind base */
+@import '~tailwindcss/base.css';
+
+/* Tailwind components */
+@import '~tailwindcss/components.css';
+
+/* Libraries and custom styles */
+/* @import '~notyf/notyf.min.css'; */
+
+/* Hide annoying Google reCAPTCHA v3 Badge */
+.grecaptcha-badge { visibility: hidden; }
+
+/* Tailwind utils */
+@import '~tailwindcss/utilities.css';
